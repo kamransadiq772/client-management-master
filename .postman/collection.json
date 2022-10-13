@@ -1,0 +1,393 @@
+{
+  "info": {
+    "_postman_id": "2466b74a-2a5b-478f-b953-192c405f9c76",
+    "name": "ClientManagement",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "signup",
+          "_postman_id": "0e8796cf-959c-40bf-a58f-689a3a2b368f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"username\": \"test\",\r\n\t\"email\": \"test@test.com\",\r\n\t\"password\": \"test\",\r\n\t\"role\": \"admin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "/signup"
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "_postman_id": "567e4c55-e33d-4e37-91c0-d5c26e02fef6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"user\": \"test\",\r\n\t\"password\": \"test\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "/login"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "ad179108-1d35-4a7e-9e7b-f70171f969a9",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "3f8fcafa-a098-41e7-87af-a5f4a5767a3d",
+            "type": "text/javascript",
+            "exec": [
+              "pm.request.url.update(",
+              "\t`${pm.variables.get('URL')}/auth${pm.request.url}`",
+              ")"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "5d23ac80-aea2-4f22-980d-8661bbd1edaa",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "get",
+          "_postman_id": "28d89704-d221-4ba3-a064-d5bbb5c6bce7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "/"
+          },
+          "response": []
+        },
+        {
+          "name": "getByID",
+          "_postman_id": "d6a27519-7be0-43a1-996c-38ea21d5e56e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "/6176482e6a6ea6cb89bf1aed"
+          },
+          "response": []
+        },
+        {
+          "name": "getFiltered",
+          "_postman_id": "4dee8e12-8d7d-470d-b486-ee9c8884c247",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "/?role=user",
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "role",
+                  "value": "user"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "post",
+          "_postman_id": "3df421bc-f882-4183-9efe-e483101a12b7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"username\": \"test2\",\r\n\t\"email\": \"test2@test.com\",\r\n\t\"password\": \"test\",\r\n    \"role\": \"user\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "/"
+          },
+          "response": []
+        },
+        {
+          "name": "put",
+          "_postman_id": "0436ef98-1bda-4ff7-882d-07a35a0c0e35",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"password\": \"test\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "/6176482e6a6ea6cb89bf1aed"
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "_postman_id": "d22e3b52-ce2e-43a9-b2cf-e9a1f1c5aedb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "/61765f38e89c96b67f3d7780"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "cff6835d-db50-49c6-a28f-a8c5587c939d",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "45ade7b0-8bf7-4b5e-b041-9649e01939df",
+            "type": "text/javascript",
+            "exec": [
+              "pm.request.url.update(",
+              "\t`${pm.variables.get('URL')}/users${pm.request.url}`",
+              ")"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "1924a361-7210-4999-8cb6-d69e3e6638a5",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ClientDetails",
+      "item": [
+        {
+          "name": "get",
+          "_postman_id": "9f590637-02cf-4512-bed1-78caeb39a3e9",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "/"
+          },
+          "response": []
+        },
+        {
+          "name": "getByID",
+          "_postman_id": "c6e45e0e-5371-49bd-9513-32b3ee88eb47",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "/6176482e6a6ea6cb89bf1aed"
+          },
+          "response": []
+        },
+        {
+          "name": "getFiltered",
+          "_postman_id": "860e9375-ea02-41e8-8f05-e789d9242f8f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "/?clientName=test1",
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "key": "clientName",
+                  "value": "test1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "post",
+          "_postman_id": "ee531631-3d8d-46c6-ba0b-33e468ce50bd",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"clientName\": \"test\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "/"
+          },
+          "response": []
+        },
+        {
+          "name": "put",
+          "_postman_id": "47ab86cd-9a74-4246-9485-385c5cdc8c86",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"clientName\": \"test123\",\r\n    \"anydesk\": {\r\n        \"address\": \"1234567890\",\r\n        \"password\": \"test\"\r\n    },\r\n    \"server\": null,\r\n    \"frontend\": null,\r\n    \"backend\": null,\r\n    \"reportingServer\": null\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "/6177e54dd91774090d3e3b2a"
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "_postman_id": "5a3ba75a-89f2-49e2-9883-8914083c212e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "/6177e6e3193c82a5ed185915"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "1fce4d5b-4fd8-4b88-ae1e-8cafce0916f0",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "16e246d8-db7d-4abe-a03e-0640bbe40ca7",
+            "type": "text/javascript",
+            "exec": [
+              "pm.request.url.update(",
+              "\t`${pm.variables.get('URL')}/clientDetails${pm.request.url}`",
+              ")"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "46a76ff6-77b1-4b5e-acd8-ad6fea9a7a84",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": {
+      "value": "{{JWToken}}",
+      "key": "JWToken"
+    }
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "883565d4-c7fa-4910-86cb-fbf93bc0e0ac",
+        "type": "text/javascript",
+        "exec": [
+          "console.log(pm.request.method)",
+          "if (pm.request.method !== 'GET') {",
+          "    pm.request.headers.add({",
+          "        key: 'CSRF',",
+          "        name: 'CSRF Token',",
+          "        value: pm.variables.get('CSRF')",
+          "    });",
+          "}"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "2748a7df-db6b-4c3e-bab7-fe615a5cbf26",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

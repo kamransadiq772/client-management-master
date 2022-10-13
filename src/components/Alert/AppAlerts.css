@@ -1,0 +1,15 @@
+.app-alert {
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	max-height: 100vh;
+	max-height: -webkit-fill-available;
+	max-width: calc(100% - 20px);
+	min-width: 300px;
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 5px;
+	z-index: 5;
+	font-size: 1.5rem;
+	font-weight: var(--fontMedium);
+}

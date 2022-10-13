@@ -1,0 +1,8 @@
+<svg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' fill-rule='evenodd' clip-rule='evenodd'
+	image-rendering='optimizeQuality' shape-rendering='geometricPrecision' text-rendering='geometricPrecision'
+	viewBox='0 0 19.7 19.7'>
+	<path class='fill' fill='#B7B6B6'
+		d='M5.75 9.85c0 .54.11 1.06.3 1.54l5.35-5.35a4.11 4.11 0 0 0-5.65 3.81zm2.57 3.81a4.11 4.11 0 0 0 5.35-5.35l-5.35 5.35z' />
+	<path class='outline' fill='#1A1A1A' class='outline' fill-rule='nonzero'
+		d='M18.32.24c.75-.75 1.88.39 1.14 1.14L1.38 19.46c-.75.75-1.88-.39-1.14-1.14L18.32.24zM6.04 11.38l-1.2 1.2c-1.07-1.95-.9-4.39.44-6.17L1.61 2.74V6.3c0 1.05-1.6 1.05-1.6 0V.87C-.03.38.38-.03.87 0h5.44c1.05 0 1.05 1.6 0 1.6H2.75l3.67 3.67a5.733 5.733 0 0 1 6.17-.45l-1.2 1.2c-3.38-1.37-6.68 2.03-5.35 5.35zm2.27 2.27c3.38 1.37 6.69-2.03 5.35-5.35l1.2-1.2c1.07 1.95.89 4.39-.45 6.17l3.67 3.67v-3.56c0-1.05 1.6-1.05 1.6 0v5.43c.04.49-.37.9-.86.87h-5.44c-1.05 0-1.05-1.6 0-1.6h3.56l-3.67-3.67a5.712 5.712 0 0 1-6.17.44l1.2-1.2z' />
+</svg>

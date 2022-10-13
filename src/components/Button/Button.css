@@ -1,0 +1,192 @@
+button {
+	--colorStart: var(--bgContent);
+	--colorHover: var(--bgHighlight);
+	--colorClick: #ffffff88;
+	--colorFg: var(--fg);
+
+	position: relative;
+	outline: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	font-weight: var(--fontBold);
+	font-size: 1.3em;
+	padding: 5px;
+	cursor: pointer;
+	border: var(--border);
+	border-radius: 5px;
+	color: var(--colorFg);
+	background-color: var(--colorStart);
+	background-image: linear-gradient(var(--colorStart) 0%, var(--colorStart) 33.334%, var(--colorHover) 33.334%, var(--colorHover) 66.667%, var(--colorClick) 66.667%, var(--colorClick) 100%);
+	background-size: 100% 300%;
+	background-position: left top;
+	transition: background var(--transitionTime), color var(--transitionTime), border var(--transitionTime);
+}
+
+button:hover,
+button.active {
+	background-position: left top 50%;
+	--colorFg: var(--bg);
+}
+
+button:active {
+	background-position: left top 100%;
+}
+
+@keyframes buttonClicked {
+	from {
+		width: 0%;
+		height: 0%;
+	}
+}
+
+button svg {
+	height: 100%;
+	width: auto;
+	margin-left: 10px;
+}
+
+button.icon svg {
+	margin-left: 0;
+}
+
+button svg .outline {
+	fill: var(--borderColor);
+}
+
+button svg .fill {
+	transition: fill var(--transitionTime);
+	fill: var(--colorHover);
+}
+
+button:hover svg .fill,
+button.active svg .fill {
+	fill: var(--colorStart);
+}
+
+/*! Primary */
+
+button.primary {
+	--colorStart: var(--primary);
+	--colorHover: var(--primaryHighlight);
+}
+
+button.primary svg .fill {
+	fill: var(--secondary);
+}
+
+button.primary:hover svg .fill {
+	fill: var(--secondary);
+}
+
+/*! Secondary */
+
+button.secondary {
+	--colorStart: var(--secondary);
+	--colorHover: var(--secondaryHighlight);
+}
+
+/*! Error */
+
+button.error {
+	--colorStart: var(--error);
+	--colorHover: var(--errorHighlight);
+}
+
+
+/*! Success */
+
+button.success {
+	--colorStart: var(--success);
+	--colorHover: var(--successHighlight);
+}
+
+
+/*! Warning */
+
+button.warning {
+	--colorStart: var(--warning);
+	--colorHover: var(--warningHighlight);
+}
+
+
+/*! Info */
+
+button.info {
+	--colorStart: var(--info);
+	--colorHover: var(--infoHighlight);
+}
+
+
+/*! Tooltip */
+
+button .tooltip {
+	display: none;
+}
+
+button:hover .tooltip,
+button:focus .tooltip {
+	display: flex;
+}
+
+
+/*! Simple Button */
+
+button.simple {
+	border: none;
+	background-color: unset;
+	background: none;
+}
+
+button.simple:hover,
+button.simple.active {
+	background-position: unset;
+	color: var(--colorFg);
+}
+
+button.simple.icon {
+	padding: 0;
+}
+
+button.simple:active {
+	fill: var(--colorClick)
+}
+
+button.simple.primary svg .fill {
+	fill: var(--colorStart);
+}
+
+button.simple.primary:hover svg .fill {
+	fill: var(--colorHover);
+}
+
+
+/*! Rounded Corners */
+
+button.rounded {
+	border-radius: 50px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+
+/*! Loading Icon */
+
+button.loading > svg > .fill {
+	fill: none;
+}
+
+button.loading:hover svg .fill,
+button.loading.active svg .fill {
+	fill: none;
+}
+
+
+button.loading > svg > .outline {
+	fill: none;
+}
+
+button.loading > svg > .outline.loader {
+	fill: var(--colorFg);
+}

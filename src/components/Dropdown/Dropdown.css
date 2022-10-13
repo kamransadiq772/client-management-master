@@ -1,0 +1,35 @@
+.form-field select {
+	--paddingRight: 28px;
+
+	padding-right: var(--paddingRight);
+	width: 100%;
+}
+
+.form-field select:disabled {
+	--paddingRight: 50px;
+}
+
+.form-field select > option {
+	background-color: var(--bgContent);
+}
+
+.form-field select > option:hover,
+.form-field select > option:focus {
+	background-color: var(--primary);
+	color: (--bg);
+}
+
+.form-field select > option:checked {
+	background-color: var(--secondary);
+	color: (--bg);
+}
+
+.form-field-container.form-dropdown .form-field-icons {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.form-field-container.form-dropdown .form-field-icons {
+	pointer-events: none;
+}

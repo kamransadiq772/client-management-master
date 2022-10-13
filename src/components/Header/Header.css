@@ -1,0 +1,138 @@
+.header {
+	background-color: var(--primary);
+	border-radius: 10px;
+	padding: 10px;
+	margin-bottom: 10px;
+	height: 75px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-shrink: 0;
+	border: var(--border);
+}
+
+.header .page-label {
+	font-size: 2.3em;
+	font-weight: var(--fontBold);
+	text-align: right;
+	padding-left: 15px;
+	position: relative;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header .page-label::before {
+	content: '';
+	position: absolute;
+	width: 3px;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: var(--fg);
+}
+
+.header-left,
+.header-right {
+	height: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.header-left > :not(:first-child) {
+	margin-left: 15px;
+}
+
+.header-right {
+	justify-content: flex-end;
+}
+
+.header-right > :not(:first-child) {
+	margin-left: 5px;
+}
+
+.wimetrix-logo {
+	height: 100%;
+}
+
+.wimetrix-logo > path {
+	fill: var(--fg);
+}
+
+.header button,
+.header .header-loading {
+	height: 100%;
+}
+
+.header .header-loading > .fill {
+	fill: var(--error);
+}
+
+.header svg {
+	animation: showIcon var(--transitionTime);
+}
+
+@keyframes showIcon {
+	from {
+		transform: rotateX(360deg);
+	}
+}
+
+
+/*! Drawer */
+
+.header-drawer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: calc(100% - 20px);
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	align-items: center;
+	background-color: var(--primary);
+	z-index: 11;
+	transition: width var(--transitionTime), padding var(--transitionTime);
+	overflow: hidden;
+	padding: 0;
+	margin: 10px;
+	border-radius: 10px;
+	border: none;
+}
+
+.header-drawer.showing {
+	width: 300px;
+	padding: 20px;
+	border: var(--border);
+}
+
+.header > .header-drawer > * {
+	height: 50px;
+	justify-self: center;
+}
+
+.header > .header-drawer > .search-bar {
+	--fullWidth: 100%;
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
+
+/*! Media Queries */
+
+@media screen and (max-width: 700px) {
+	.header {
+		height: 60px;
+		padding: 7px;
+	}
+
+	.header .page-label {
+		font-size: 1.5em;
+		font-weight: var(--fontMedium);
+		margin-right: 0;
+		line-height: 1;
+	}
+}

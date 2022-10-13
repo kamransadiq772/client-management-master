@@ -1,0 +1,105 @@
+.alert-item {
+	--colorStart: var(--bgContent);
+	--colorHover: var(--bgHighlight);
+	--colorClick: #ffffff88;
+
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	background-color: var(--colorStart);
+	color: var(--fg);
+	font-size: 1rem;
+	padding-left: 15px;
+	padding-right: 45px;
+	height: 50px;
+	width: 100%;
+	border: var(--border);
+	border-radius: 5px;
+	background-color: var(--colorStart);
+	animation: showError var(--transitionTime);
+	transition: height var(--transitionTime), padding var(--transitionTime);
+	overflow: hidden;
+}
+
+.alert-item.error {
+	--colorStart: var(--error);
+	--colorHover: var(--errorHighlight);
+}
+
+.alert-item.success {
+	--colorStart: var(--success);
+	--colorHover: var(--successHighlight);
+}
+
+.alert-item.warning {
+	--colorStart: var(--warning);
+	--colorHover: var(--warningHighlight);
+}
+
+.alert-item.info {
+	--colorStart: var(--info);
+	--colorHover: var(--infoHighlight);
+}
+
+.alert-item.primary {
+	--colorStart: var(--primary);
+	--colorHover: var(--primaryHighlight);
+}
+
+.alert-item.secondary {
+	--colorStart: var(--secondary);
+	--colorHover: var(--secondaryHighlight);
+}
+
+.alert-item.hidden {
+	height: 0;
+	padding: 0;
+}
+
+.alert-item > .alert-close {
+	color: var(--fg);
+	font-weight: var(--fontBold);
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 44px;
+	height: 44px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+	background-color: var(--colorStart);
+	background-image: linear-gradient(90deg, var(--colorStart) 0%, var(--colorStart) 33.334%, var(--colorHover) 33.334%, var(--colorHover) 66.667%, var(--colorClick) 66.667%, var(--colorClick) 100%);
+	background-size: 300% 100%;
+	background-position: left top;
+	transition: background var(--transitionTime), color var(--transitionTime), border var(--transitionTime);
+}
+
+.alert-item > .alert-close:hover {
+	background-position: left 50% top;
+	color: var(--bg);
+}
+
+.alert-item > .alert-close:active {
+	background-position: left 100% top;
+	color: var(--fg);
+}
+
+@keyframes showError {
+	from {
+		height: 0;
+		padding: 0;
+	}
+}
+
+
+/*! Media Queries */
+
+@media screen and (max-width: 700px) {
+	.alert-item {
+		padding-left: 7px;
+	}
+}

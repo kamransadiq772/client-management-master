@@ -1,0 +1,138 @@
+body {
+	--primaryLight: #C1BEFA;
+	--primaryLightHighlight: #5E59BD;
+
+	--primaryDark: #7672ad;
+	--primaryDarkHighlight: #9f9dbf;
+
+	--secondaryLight: #E8D766;
+	--secondaryLightHighlight: #A6920D;
+
+	--secondaryDark: #aba057;
+	--secondaryDarkHighlight: #c2b982;
+
+	--errorLight: #FF7990;
+	--errorLightHighlight: #A84657;
+
+	--errorDark: #c96979;
+	--errorDarkHighlight: #c29199;
+
+	--successLight: #7ED67E;
+	--successLightHighlight: #4C854C;
+
+	--successDark: #50ad50;
+	--successDarkHighlight: #9bcc9b;
+
+	--warningLight: #DB9E69;
+	--warningLightHighlight: #B0733D;
+
+	--warningDark: #a87851;
+	--warningDarkHighlight: #ba9f8a;
+
+	--infoLight: #7FCFE7;
+	--infoLightHighlight: #2E849E;
+
+	--infoDark: #479db5;
+	--infoDarkHighlight: #8fb3bd;
+
+	--black: #1A1A1A;
+	--blackHighlight: #4A4949;
+	--white: #FCFBFC;
+	--whiteHighlight: #EDEDED;
+
+	--lightBg: var(--white);
+	--lightBgContent: #E3E3E3;
+	--lightBgHighlight: #919191;
+
+	--darkBg: #343440;
+	--darkBgContent: #51515c;
+	--darkBgHighlight: #6c6c73;
+}
+
+body:not(.dark-mode):not(.light-mode),
+body.light-mode {
+	--primary: var(--primaryLight);
+	--primaryHighlight: var(--primaryLightHighlight);
+
+	--secondary: var(--secondaryLight);
+	--secondaryHighlight: var(--secondaryLightHighlight);
+
+	--error: var(--errorLight);
+	--errorHighlight: var(--errorLightHighlight);
+
+	--success: var(--successLight);
+	--successHighlight: var(--successLightHighlight);
+
+	--warning: var(--warningLight);
+	--warningHighlight: var(--warningLightHighlight);
+
+	--info: var(--infoLight);
+	--infoHighlight: var(--infoLightHighlight);
+
+	--bg: var(--lightBg);
+	--bgContent: var(--lightBgContent);
+	--bgHighlight: var(--lightBgHighlight);
+
+	--fg: var(--black);
+	--fgHighlight: var(--blackHighlight);
+
+	--borderColor: var(--black);
+}
+
+body.dark-mode {
+	--primary: var(--primaryDark);
+	--primaryHighlight: var(--primaryDarkHighlight);
+
+	--secondary: var(--secondaryDark);
+	--secondaryHighlight: var(--secondaryDarkHighlight);
+
+	--error: var(--errorDark);
+	--errorHighlight: var(--errorDarkHighlight);
+
+	--success: var(--successDark);
+	--successHighlight: var(--successDarkHighlight);
+
+	--warning: var(--warningDark);
+	--warningHighlight: var(--warningDarkHighlight);
+
+	--info: var(--infoDark);
+	--infoHighlight: var(--infoDarkHighlight);
+
+	--bg: var(--darkBg);
+	--bgContent: var(--darkBgContent);
+	--bgHighlight: var(--darkBgHighlight);
+
+	--fg: var(--white);
+	--fgHighlight: var(--whiteHighlight);
+
+	--borderColor: var(--black);
+}
+
+@media (prefers-color-scheme: dark) {
+	body:not(.dark-mode):not(.light-mode) {
+		--primary: var(--primaryDark);
+		--primaryHighlight: var(--primaryDarkHighlight);
+
+		--secondary: var(--secondaryDark);
+		--secondaryHighlight: var(--secondaryDarkHighlight);
+
+		--error: var(--errorDark);
+		--errorHighlight: var(--errorDarkHighlight);
+
+		--success: var(--successDark);
+		--successHighlight: var(--successDarkHighlight);
+
+		--warning: var(--warningDark);
+		--warningHighlight: var(--warningDarkHighlight);
+
+		--info: var(--infoDark);
+		--infoHighlight: var(--infoDarkHighlight);
+
+		--bg: var(--darkBg);
+		--bgContent: var(--darkBgContent);
+		--bgHighlight: var(--darkBgHighlight);
+
+		--fg: var(--white);
+		--fgHighlight: var(--whiteHighlight);
+	}
+}

@@ -1,0 +1,259 @@
+.view-page.loading {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.view-page > * {
+	transform-origin: 0% 0%;
+	animation: showView var(--transitionTime);
+}
+
+@keyframes showView {
+	from {
+		transform: rotateX(90deg);
+	}
+}
+
+.view-page > .loading-icon {
+	width: 75px;
+	height: 75px;
+}
+
+/*!	------------------------- 	*/
+/*!		  Table Styles 			*/
+/*!	------------------------- 	*/
+
+.table-container {
+	table-layout: fixed;
+	margin: 0;
+	border-collapse: separate;
+	border-spacing: 0px 15px;
+	font-size: 1em;
+	width: 100%;
+}
+
+.table-header .table-cell {
+	z-index: 5;
+	background-color: var(--secondary);
+	font-weight: var(--fontBold);
+	position: sticky;
+	top: 0;
+}
+
+.table-cell {
+	font-size: 2em;
+	padding: 20px 10px;
+	width: auto;
+	background-color: var(--bgContent);
+	border: var(--border);
+	border-right: none;
+	text-align: center;
+	font-weight: var(--fontMedium);
+}
+
+.table-cell:last-child {
+	border-right: var(--border);
+}
+
+.table-cell:first-child {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.table-cell:last-child {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+
+/*! Index Cell Styles */
+
+.index-header {
+	width: 60px;
+}
+
+
+/*! Name Cell Styles */
+
+.name-header {
+	width: 30%;
+	text-align: left;
+}
+
+.name-cell {
+	text-align: left;
+	white-space: noWrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+/*! Detail Cell Styles */
+
+.td-detail-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.td-detail-container > :not(:first-child) {
+	margin-top: 8px;
+}
+
+.td-detail {
+	--detailBG: var(--primary);
+	--detailBGHighlight: var(--primaryHighlight);
+
+	width: auto;
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	background-color: var(--detailBG);
+	border: var(--borderThin);
+	border-radius: 5px;
+	max-width: 100%;
+	position: relative;
+}
+
+.td-detail:nth-of-type(6n + 2) {
+	--detailBG: var(--secondary);
+	--detailBGHighlight: var(--secondaryHighlight);
+}
+
+.td-detail:nth-of-type(6n + 3) {
+	--detailBG: var(--error);
+	--detailBGHighlight: var(--errorHighlight);
+}
+
+.td-detail:nth-of-type(6n + 4) {
+	--detailBG: var(--success);
+	--detailBGHighlight: var(--successHighlight);
+}
+
+.td-detail:nth-of-type(6n + 5) {
+	--detailBG: var(--warning);
+	--detailBGHighlight: var(--warningHighlight);
+}
+
+.td-detail:nth-of-type(6n + 6) {
+	--detailBG: var(--info);
+	--detailBGHighlight: var(--infoHighlight);
+}
+
+.td-detail > p {
+	display: inline-block;
+	text-align: center;
+	padding: 5px 14px;
+	flex-grow: 1;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 0.8em;
+}
+
+.td-detail > .tooltip {
+	display: none;
+}
+
+.td-detail > p:hover + .tooltip {
+	display: flex;
+}
+
+.td-detail > button {
+	--colorStart: var(--detailBG);
+	--colorHover: var(--detailBGHighlight);
+
+	height: unset;
+	width: 26px;
+	min-width: 26px;
+	padding: 4px;
+	border: none;
+	border-left: var(--borderThin);
+	border-radius: 0;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+/*! Action Button Styles */
+
+.action-header {
+	width: 145px;
+	text-align: center;
+}
+
+.action-cell.table-cell {
+	padding: 5px;
+	overflow: unset;
+}
+
+.action-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.action-container > :not(:first-child) {
+	margin-left: 5px;
+}
+
+.action-icon {
+	padding: 5px;
+	cursor: pointer;
+}
+
+.action-icon svg {
+	width: 25px;
+	height: 25px;
+}
+
+/*! Media Queries */
+
+@media screen and (max-width: 1600px) {
+	.page-body.view-page {
+		font-size: 0.9em;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.page-body.view-page {
+		font-size: 0.7em;
+	}
+
+	.name-header {
+		width: unset;
+	}
+
+	.table-cell {
+		font-size: 2em;
+		padding: 5px;
+	}
+
+	.index-header {
+		width: 45px;
+	}
+
+	th.table-cell {
+		padding: 15px 5px;
+	}
+
+	.action-header {
+		width: 135px;
+	}
+
+	.action-icon {
+		padding: 5px;
+	}
+
+	.action-icon svg {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+@media screen and (max-width: 700px) {}

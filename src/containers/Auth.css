@@ -1,0 +1,301 @@
+.auth-page.page-body {
+	position: relative;
+	margin: 0 auto;
+	display: flex;
+	align-items: stretch;
+	width: 100%;
+	padding: 0 15%;
+	font-size: 1rem;
+	height: 100%;
+}
+
+.auth-page > .navigation-back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 2.7em;
+}
+
+.auth-page > .theme-switch {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 2.7em;
+}
+
+.auth-page > * {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.auth-page > aside {
+	width: 70%;
+	align-items: flex-start;
+	flex-shrink: 0;
+}
+
+.auth-page > aside > .auth-logo {
+	width: 100%;
+	max-width: 39em;
+}
+
+.auth-page > aside > .auth-logo > path {
+	fill: var(--fg);
+}
+
+.auth-page > aside > hr {
+	width: 100%;
+	max-width: 39em;
+	height: 7px;
+	background-color: var(--fg);
+	border-radius: 30px;
+	margin: 25px 0 10px 0;
+}
+
+.auth-page > aside > h1 {
+	text-transform: uppercase;
+	font-size: 4.6em;
+	line-height: 1;
+}
+
+.auth-page > .auth-content {
+	flex-grow: 1;
+	min-width: 320px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.auth-page > .auth-content > form {
+	background-color: var(--secondary);
+	padding: 5em 2em;
+	border: var(--border);
+	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+	gap: 2em;
+	width: 100%;
+}
+
+.auth-page > .auth-content > form .form-field {
+	background-color: var(--white);
+	color: var(--black);
+}
+
+.auth-page > .auth-content > form .form-field input {
+	color: inherit;
+}
+
+.auth-page > .auth-content form > button {
+	font-size: 2em;
+	font-weight: var(--fontBold);
+	height: 50px;
+	margin-top: 10px;
+}
+
+.auth-page .form-field-container {
+	font-size: 0.8em;
+	overflow: unset;
+}
+
+
+/*! Signup Styles */
+
+.auth-page.signup-page.page-body {
+	padding: 0 8%;
+	justify-content: space-between;
+}
+
+.auth-page.signup-page > aside {
+	width: 25em;
+	padding-right: 50px;
+	align-items: center;
+}
+
+.auth-page.signup-page > aside > .auth-logo,
+.auth-page.signup-page > aside > hr {
+	max-width: 100%;
+}
+
+.auth-page.signup-page > aside > h1 {
+	font-size: 2.3em;
+}
+
+.auth-page.signup-page > aside > h3 {
+	margin-top: 15px;
+	font-size: 1.5em;
+}
+
+.auth-page.signup-page > .auth-content {
+	max-width: 800px;
+}
+
+.auth-page.signup-page > .auth-content > form {
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.auth-page.signup-page > .auth-content > form > .form-field-container {
+	width: calc(50% - 1.3em);
+}
+
+.auth-page.signup-page > .auth-content > form > button {
+	width: 100%;
+}
+
+
+/*! Media Queries */
+
+@media screen and (max-width: 1600px) {
+	.auth-page.page-body {
+		padding: 0 50px;
+		font-size: 0.8rem;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.auth-page.page-body {
+		padding: 75px 0 0 0;
+		font-size: 0.8rem;
+	}
+
+	.auth-page > aside {
+		position: absolute;
+		width: auto;
+		top: 0;
+		left: 0;
+		height: auto;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: flex-end;
+		padding-right: 75px;
+		height: 45px;
+		font-size: 0.5em;
+	}
+
+	.auth-page > aside > :not(:first-child) {
+		margin-left: 10px;
+		position: relative;
+		padding-left: 10px;
+	}
+
+	.auth-page > aside > :not(:first-child)::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 2px;
+		background-color: var(--fg);
+	}
+
+	.auth-page > aside > .auth-logo {
+		width: auto;
+		height: 100%;
+	}
+
+	.auth-page > aside > hr {
+		display: none;
+	}
+
+	.auth-page > aside > h1 {
+		width: auto;
+		line-height: 0.8;
+	}
+
+	.auth-page > .auth-content {
+		height: 100%;
+		padding: 0;
+		padding: 0;
+		justify-content: center;
+		width: 100%;
+		min-width: unset;
+		padding-top: 75px;
+	}
+
+	.auth-page > .auth-content > form {
+		max-width: 310px;
+	}
+
+	/*! Signup Styles */
+	.auth-page.signup-page > aside {
+		left: 75px;
+		width: unset;
+		align-items: flex-end;
+		padding-right: 75px;
+	}
+
+	.auth-page.signup-page > aside > h1 {
+		font-size: 4em;
+	}
+
+	.auth-page.signup-page > aside > h3 {
+		margin-top: unset;
+		font-size: 2.5em;
+		line-height: 0.8;
+	}
+
+	.auth-page.signup-page > .auth-content > form {
+		flex-direction: column;
+		flex-wrap: nowrap;
+		gap: 1.5em;
+		padding: 1.5em;
+	}
+
+	.auth-page.signup-page > .auth-content > form > .form-field-container {
+		width: 100%;
+	}
+
+}
+
+@media screen and (max-width: 700px) {
+	.auth-page.page-body {
+		padding: 10px;
+		padding-top: 55px;
+	}
+
+	.auth-page > aside {
+		font-size: 0.4em;
+		height: 40px;
+	}
+
+	.auth-page > .auth-content {
+		padding-top: 55px;
+	}
+
+	/*! Signup Styles */
+	.auth-page.signup-page.page-body {
+		padding: 0;
+	}
+
+	.auth-page.signup-page > aside {
+		left: 55px;
+		padding-right: 55px;
+	}
+
+	.auth-page > aside > :not(:first-child) {
+		margin-left: 5px;
+		padding-left: 5px;
+	}
+
+	.auth-page > aside > :not(:first-child)::before {
+		width: 1px;
+	}
+
+	.auth-page.signup-page > aside > h1 {
+		font-size: 3em;
+
+	}
+
+	.auth-page.signup-page > aside > h3 {
+		margin-top: unset;
+		font-size: 2.5em;
+		line-height: 0.8;
+	}
+}

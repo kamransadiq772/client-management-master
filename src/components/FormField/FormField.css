@@ -1,0 +1,112 @@
+.form-field-container {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	overflow: hidden;
+}
+
+.form-field-container.disabled {
+	opacity: 0.75;
+}
+
+.form-field-container > * {
+	height: 100%;
+}
+
+.form-field-container > label {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-weight: var(--fontMedium);
+	font-size: 1.7em;
+	padding-bottom: 5px;
+}
+
+.form-field {
+	display: flex;
+	background-color: var(--bgContent);
+	border: var(--border);
+	border-radius: 5px;
+	align-items: center;
+	flex-grow: 1;
+	gap: 5px;
+	position: relative;
+	font-size: 2em;
+	padding: 5px;
+}
+
+.form-field > select,
+.form-field > input {
+
+	outline: 0;
+	border: none;
+	background-color: unset;
+	height: 100%;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	font-size: 1em;
+	font-weight: var(--fontMedium);
+	width: 100%;
+	padding: 5px;
+}
+
+.form-field > select::-ms-expand {
+	display: none;
+}
+
+.form-field > select > option {
+	font-size: 0.8em;
+}
+
+.form-field > .form-field-icons {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding: 5px;
+	margin-left: 5px;
+}
+
+.form-field-icons > button,
+.form-field-icons > svg {
+	height: 22px;
+	width: auto;
+}
+
+.form-field-icons > button > svg {
+	animation: showIcon var(--transitionTime);
+}
+
+@keyframes showIcon {
+	from {
+		transform: rotateX(360deg);
+	}
+}
+
+
+/*! Inline Styles */
+
+.form-field-container.inline {
+	flex-direction: row;
+	border: var(--border);
+	border-radius: 5px;
+	background-color: var(--bgContent);
+}
+
+.form-field-container.inline > label {
+	background-color: var(--primary);
+	justify-content: center;
+	font-size: 1em;
+	padding: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-right: var(--border);
+}
+
+.form-field-container.inline.disabled > label {
+	background-color: var(--bgHighlight);
+}
+
+.form-field-container.inline > .form-field {
+	border: none;
+	background-color: unset;
+}

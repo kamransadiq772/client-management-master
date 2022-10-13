@@ -1,0 +1,23 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23.94 23.94'>
+
+	<style>
+		.loader {
+			transform-origin: center;
+			animation: loading 1s cubic-bezier(0.4, 1.6, 0.8, 1) infinite;
+		}
+		@keyframes loading {
+			from {
+				transform: rotateZ(0deg)
+			}
+			to {
+				transform: rotateZ(360deg);
+			}
+		}
+	</style>
+
+	<rect class='fill' fill='#C1BEFA' width='23.94' height='23.94' rx='2.23' ry='2.23' />
+	<path class='outline' fill='#1a1a1a'
+		d='M2.23 0h19.49c1.22 0 2.23 1 2.23 2.23v19.49c0 1.22-1 2.23-2.23 2.23H2.23c-1.22 0-2.23-1-2.23-2.23V2.23C0 1.01 1 0 2.23 0zm19.49 1.42H2.23c-.22 0-.42.09-.57.23-.15.15-.24.35-.24.57v19.49c0 .22.09.42.23.57l.01.01a.8.8 0 0 0 .57.23h19.49c.22 0 .42-.09.57-.24.14-.15.23-.35.23-.57V2.22c0-.22-.09-.42-.24-.57a.802.802 0 0 0-.57-.24z' />
+	<path class='outline loader' fill='#1a1a1a'
+		d='M11.97 6.36v2.29c-1.83 0-3.32 1.49-3.32 3.32H6.36c0-3.1 2.51-5.61 5.61-5.61zm0 3.98a1.63 1.63 0 1 1 0 3.26 1.63 1.63 0 0 1 0-3.26zm0-7.94V5A6.97 6.97 0 0 0 5 11.97H2.4c0-5.29 4.29-9.57 9.57-9.57z' />
+</svg>

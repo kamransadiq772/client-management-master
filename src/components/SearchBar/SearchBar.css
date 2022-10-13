@@ -1,0 +1,53 @@
+.search-bar {
+	--fullWidth: 450px;
+
+	height: 100%;
+	display: flex;
+	background-color: var(--info);
+	border-radius: 5px;
+	border: var(--border);
+	background-size: 100% 300%;
+	background-position: left top;
+	font-size: 2em;
+	transition: width var(--transitionTime), padding var(--transitionTime);
+}
+
+.search-bar > * {
+	height: 100%;
+}
+
+.search-bar > .form-field-container {
+	padding-left: 10px;
+	width: var(--fullWidth);
+	transition: width var(--transitionTime), padding var(--transitionTime);
+	animation: showSearch var(--transitionTime);
+}
+
+.search-bar > .hide-search {
+	padding-left: 0px;
+	width: 0;
+}
+
+@keyframes showSearch {
+	from {
+		width: 0;
+		padding: 0;
+	}
+}
+
+.search-bar > button,
+.search-bar > .form-field-container > .form-field {
+	border: none;
+	border-radius: 0;
+	background-color: unset;
+}
+
+.search-bar > .form-field-container > .form-field {
+	padding: 5px;
+	width: 100%;
+}
+
+.search-bar > .form-field-container > .form-field > input {
+	width: 100%;
+	font-size: 0.5em;
+}

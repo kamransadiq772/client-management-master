@@ -1,0 +1,49 @@
+{
+	"name": "wimetrix-client-management",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@react-hook/media-query": "^1.1.1",
+		"cors": "^2.8.5",
+		"cross-env": "^7.0.3",
+		"dotenv": "^10.0.0",
+		"express-mongo-sanitize": "^2.1.0",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^6.0.12",
+		"mongoose-autopopulate": "^0.16.0",
+		"validator": "^13.6.0"
+	},
+	"scripts": {
+		"start": "cross-env PORT=5002 nodemon server",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"dev": "concurrently --prefixColors green,blue npm:dev:frontend npm:dev:backend",
+		"dev:frontend": "react-scripts start",
+		"dev:backend": "cross-env NODE_ENV=development PORT=5002 nodemon server"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-scripts": "4.0.3",
+		"concurrently": "^6.3.0"
+	}
+}
